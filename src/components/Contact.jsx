@@ -66,12 +66,12 @@ const Contact = () => {
           <p>
             💼 <span className="font-medium">LinkedIn:</span>{" "}
             <a
-              href="https://www.linkedin.com/in/abhirami-aji"
+              href="https://www.linkedin.com/in/abhirami-aji-0761a9255/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="text-purple-600 hover:underline"
             >
-              linkedin.com/in/abhirami-aji
+              Abhirami Aji
             </a>
           </p>
 
