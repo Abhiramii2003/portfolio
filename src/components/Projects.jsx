@@ -1,31 +1,6 @@
 import { motion } from "framer-motion";
-
-const projects = [
-  {
-    title: "TheraBot – AI Emotional Support App",
-    description:
-      "An AI-powered emotional support companion that provides empathetic conversations, mood tracking, diary writing, stress-relief games, and daily streak tracking.",
-    tech: "React, Node.js, MongoDB, Gemini API",
-  },
-  {
-    title: "Canteen Automation System",
-    description:
-      "A full-stack web application for managing digital food orders, seat availability, real-time notifications, admin analytics, and digital receipts.",
-    tech: "React, Node.js, Express, MongoDB, Bootstrap",
-  },
-  {
-    title: "MediTrack – Hospital Management System",
-    description:
-      "Role-based healthcare system with admin, doctor, patient, and pharmacist modules. Supports appointment booking, prescriptions, reminders, and billing.",
-    tech: "React, Node.js, MongoDB",
-  },
-  {
-    title: "AI Skin Disease Detection",
-    description:
-      "A deep learning-based system that detects skin diseases from uploaded images using a trained CNN model.",
-    tech: "Python, TensorFlow, Flask",
-  },
-];
+import { Link } from "react-router-dom";
+import { projectsData } from "../data/projectsData";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -75,9 +50,9 @@ const Projects = () => {
           viewport={{ once: true }}
           className="grid md:grid-cols-2 gap-8"
         >
-          {projects.map((project, index) => (
+          {projectsData.map((project) => (
             <motion.div
-              key={index}
+              key={project.id}
               variants={cardVariants}
               whileHover={{ y: -10, scale: 1.03 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
@@ -85,19 +60,28 @@ const Projects = () => {
                          p-7 rounded-2xl
                          shadow-md hover:shadow-2xl
                          border border-transparent hover:border-purple-500/40
-                         transition-all duration-300"
+                         transition-all duration-300 block h-full flex flex-col"
             >
               <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
                 {project.title}
               </h3>
 
-              <p className="text-gray-700 dark:text-gray-300 mb-5 leading-relaxed">
+              <p className="text-gray-700 dark:text-gray-300 mb-5 leading-relaxed flex-grow">
                 {project.description}
               </p>
 
-              <p className="text-sm text-purple-600 font-medium">
-                Tech Stack: {project.tech}
-              </p>
+              <div className="mt-auto">
+                <p className="text-sm text-purple-600 font-medium mb-4">
+                  Tech Stack: {project.tech}
+                </p>
+                
+                <Link 
+                  to={`/project/${project.id}`}
+                  className="inline-block px-5 py-2.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 font-medium rounded-lg hover:bg-purple-200 dark:hover:bg-purple-900/50 transition-colors"
+                >
+                  View Details
+                </Link>
+              </div>
             </motion.div>
           ))}
         </motion.div>

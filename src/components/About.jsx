@@ -32,8 +32,8 @@ const About = () => {
           className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
         >
           <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-            I am <span className="font-semibold text-gray-900 dark:text-white">Abhirami Aji</span>, a final year
-            B.Tech Computer Science student with a strong interest in web development
+            I am <span className="font-semibold text-gray-900 dark:text-white">Abhirami Aji</span>, a recent
+            B.Tech Computer Science graduate with a strong interest in web development
             and software engineering.
           </p>
 
