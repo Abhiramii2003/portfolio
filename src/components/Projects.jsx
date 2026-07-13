@@ -62,25 +62,37 @@ const Projects = () => {
                          border border-transparent hover:border-purple-500/40
                          transition-all duration-300 block h-full flex flex-col"
             >
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
-                {project.title}
-              </h3>
-
-              <p className="text-gray-700 dark:text-gray-300 mb-5 leading-relaxed flex-grow">
-                {project.description}
-              </p>
-
-              <div className="mt-auto">
-                <p className="text-sm text-purple-600 font-medium mb-4">
-                  Tech Stack: {project.tech}
-                </p>
+              <div className="relative h-full flex flex-col">
+                {project.featured && (
+                  <div className="absolute -top-3 -right-3 bg-gradient-to-r from-purple-500 to-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-10 animate-pulse">
+                    Featured
+                  </div>
+                )}
                 
-                <Link 
-                  to={`/project/${project.id}`}
-                  className="inline-block px-5 py-2.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 font-medium rounded-lg hover:bg-purple-200 dark:hover:bg-purple-900/50 transition-colors"
-                >
-                  View Details
-                </Link>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white pr-16">
+                  {project.title}
+                </h3>
+
+                <p className="text-gray-700 dark:text-gray-300 mb-5 leading-relaxed flex-grow">
+                  {project.description}
+                </p>
+
+                <div className="mt-auto">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {(project.techStack || project.tech.split(', ')).map((tech, idx) => (
+                      <span key={idx} className="text-xs bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2.5 py-1 rounded-md font-medium">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <Link 
+                    to={`/project/${project.id}`}
+                    className="inline-block px-5 py-2.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 font-medium rounded-lg hover:bg-purple-200 dark:hover:bg-purple-900/50 transition-colors"
+                  >
+                    View Details
+                  </Link>
+                </div>
               </div>
             </motion.div>
           ))}

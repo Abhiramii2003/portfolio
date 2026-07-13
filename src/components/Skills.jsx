@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Brain, Server, Layout, Terminal, Wrench } from "lucide-react";
 
 const Skills = () => {
   return (
@@ -23,18 +24,33 @@ const Skills = () => {
         <div className="grid md:grid-cols-3 gap-8">
 
           <SkillCard
-            title="Frontend"
-            skills={["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"]}
+            title="AI/ML"
+            icon={Brain}
+            skills={["Python", "Machine Learning", "Deep Learning", "TensorFlow", "Pandas", "NumPy", "Hugging Face"]}
+          />
+
+          <SkillCard
+            title="DevOps"
+            icon={Terminal}
+            skills={["Docker", "Linux", "GitHub Actions", "CI/CD", "Cloud Fundamentals"]}
           />
 
           <SkillCard
             title="Backend"
-            skills={["Node.js", "Express.js", "MongoDB", "Python"]}
+            icon={Server}
+            skills={["FastAPI", "Node.js", "Express.js", "MongoDB", "REST APIs"]}
+          />
+
+          <SkillCard
+            title="Frontend"
+            icon={Layout}
+            skills={["HTML", "CSS", "JavaScript", "React", "Bootstrap"]}
           />
 
           <SkillCard
             title="Tools"
-            skills={["Git & GitHub", "VS Code", "Postman", "Docker (Basics)"]}
+            icon={Wrench}
+            skills={["Git", "GitHub", "VS Code", "Postman", "Jupyter Notebook"]}
           />
 
         </div>
@@ -43,7 +59,7 @@ const Skills = () => {
   );
 };
 
-const SkillCard = ({ title, skills }) => (
+const SkillCard = ({ title, skills, icon: Icon }) => (
   <motion.div
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -55,9 +71,12 @@ const SkillCard = ({ title, skills }) => (
                shadow-md hover:shadow-xl
                transition-all duration-300"
   >
-    <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-white">
-      {title}
-    </h3>
+    <div className="flex items-center gap-3 mb-6">
+      {Icon && <Icon className="text-purple-600 dark:text-purple-400" size={28} />}
+      <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+        {title}
+      </h3>
+    </div>
 
     <div className="flex flex-wrap gap-3">
       {skills.map((skill, index) => (

@@ -1,5 +1,31 @@
 export const projectsData = [
   {
+    id: "trademind-ai",
+    title: "TradeMind AI",
+    category: "AI Developer | Full Stack AI Application | FinTech",
+    description:
+      "An AI-powered market intelligence platform for Indian traders and investors. It combines real-time stock market data, news sentiment analysis, and contextual AI assistance.",
+    fullDescription: "TradeMind AI is an AI-powered market intelligence platform for Indian traders and investors. It combines real-time stock market data, news sentiment analysis, and contextual AI assistance to help users understand market movements and make informed decisions. This project was developed during the AMD Developer Hackathon and serves as a flagship AI project demonstrating skills in AI Integration, Full Stack Development, API Integration, Financial Data Processing, NLP, Docker, and Cloud Deployment.",
+    features: [
+      "Live NIFTY, SENSEX, BANKNIFTY, and India VIX tracking",
+      "AI-powered market assistant with real-time market context",
+      "News sentiment analysis using NLP",
+      "Sector performance heatmaps & Market breadth analysis",
+      "Top gainers and losers tracking",
+      "Company fundamentals and stock search",
+      "Dynamic watchlists",
+      "Intraday charts and market visualization",
+      "Responsive UI for desktop and mobile devices"
+    ],
+    techStack: ["React", "Vite", "FastAPI", "Python", "Fireworks AI", "DeepSeek V4 Pro", "GPT-OSS", "Yahoo Finance API", "NewsAPI", "Docker", "Vercel", "Render"],
+    tech: "React, Vite, FastAPI, Python, Fireworks AI, DeepSeek V4 Pro, Docker, Vercel, Render",
+    githubLink: "https://github.com/Abhiramii2003/TradeMind-AI",
+    liveLink: "https://trade-mind-ai-xi.vercel.app/",
+    videoLink: "https://youtu.be/Slj8KozRdbk",
+    featured: true,
+    screenshots: []
+  },
+  {
     id: "therabot",
     title: "TheraBot – AI Emotional Support App",
     description:

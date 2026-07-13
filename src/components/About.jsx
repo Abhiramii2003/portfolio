@@ -32,22 +32,15 @@ const About = () => {
           className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
         >
           <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-            I am <span className="font-semibold text-gray-900 dark:text-white">Abhirami Aji</span>, a recent
-            B.Tech Computer Science graduate with a strong interest in web development
-            and software engineering.
+            I am <span className="font-semibold text-gray-900 dark:text-white">Abhirami Aji</span>, a Computer Science Engineering graduate passionate about AI/ML, Python development, and DevOps practices. My primary focus is building intelligent applications using Machine Learning and Artificial Intelligence, while leveraging modern technologies such as FastAPI, React, Node.js, MongoDB, and Docker.
           </p>
 
           <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-            I enjoy building real-world projects using modern technologies like
-            <span className="font-semibold text-gray-900 dark:text-white">
-              {" "}React, Tailwind CSS, Node.js, and MongoDB
-            </span>.
-            I believe in continuous learning and improving my skills every day.
+            Through projects like TradeMind AI and DermaSense AI, I have gained practical experience in developing and deploying AI-driven solutions. I am also actively building expertise in DevOps and MLOps, including containerization, CI/CD, Linux, and cloud technologies, to create scalable and production-ready systems.
           </p>
 
           <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            My goal is to become a confident software developer and contribute to
-            impactful projects while growing both technically and personally.
+            My goal is to grow as an AI/ML Engineer with strong DevOps expertise, contributing to innovative and impactful technology solutions.
           </p>
         </motion.div>
 

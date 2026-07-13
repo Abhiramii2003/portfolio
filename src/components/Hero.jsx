@@ -58,10 +58,10 @@ const Hero = () => {
 
           <motion.div variants={itemVariants} className="mb-10 max-w-xl">
             <p className="text-xl md:text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-3">
-              Software Developer & B.Tech CS Graduate
+              AI/ML Engineer & DevOps Enthusiast
             </p>
             <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed font-medium">
-              Passionate about building scalable, innovative, and user-centric web solutions using modern technologies.
+              Passionate about building scalable, intelligent applications and robust infrastructure using machine learning and modern DevOps practices.
             </p>
           </motion.div>
 

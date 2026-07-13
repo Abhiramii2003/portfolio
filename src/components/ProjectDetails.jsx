@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { projectsData } from "../data/projectsData";
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { ArrowLeft, ExternalLink, Github, Youtube } from "lucide-react";
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -11,7 +11,14 @@ const ProjectDetails = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [id]);
+    if (project) {
+      document.title = `${project.title} | Portfolio`;
+      let metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute("content", project.description);
+      }
+    }
+  }, [id, project]);
 
   if (!project) {
     return (
@@ -56,9 +63,18 @@ const ProjectDetails = () => {
           >
             {project.title}
           </motion.h1>
-          <p className="text-lg text-purple-600 font-medium mb-6">
-            Tech Stack: {project.tech}
-          </p>
+          {project.category && (
+            <p className="text-sm font-semibold text-purple-600 dark:text-purple-400 mb-2 uppercase tracking-wide">
+              {project.category}
+            </p>
+          )}
+          <div className="flex flex-wrap gap-2 mb-6">
+            {(project.techStack || project.tech.split(', ')).map((tech, idx) => (
+              <span key={idx} className="text-sm bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-3 py-1 rounded-md font-medium border border-purple-200 dark:border-purple-800">
+                {tech}
+              </span>
+            ))}
+          </div>
           
           {/* Links */}
           <div className="flex gap-4">
@@ -82,6 +98,17 @@ const ProjectDetails = () => {
               >
                 <ExternalLink size={20} />
                 <span>Live Demo</span>
+              </a>
+            )}
+            {project.videoLink && (
+              <a 
+                href={project.videoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+              >
+                <Youtube size={20} />
+                <span>Demo Video</span>
               </a>
             )}
           </div>
@@ -109,6 +136,23 @@ const ProjectDetails = () => {
             </section>
           )}
 
+
+          {/* Video Demo Embed */}
+          {project.videoLink && (
+            <section>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 border-b border-gray-200 dark:border-gray-800 pb-2">Video Demo</h2>
+              <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-xl shadow-lg border border-gray-200 dark:border-gray-800">
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src={project.videoLink.replace("youtu.be/", "www.youtube.com/embed/").replace("watch?v=", "embed/")}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </section>
+          )}
 
         </div>
 
